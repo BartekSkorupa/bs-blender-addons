@@ -19,8 +19,8 @@
 bl_info = {
     'name': 'Copy Render Layer',
     'author': 'Bartek Skorupa',
-    'version': (0, 6),
-    'blender': (2, 6, 6),
+    'version': (0, 7),
+    'blender': (2, 7, 0),
     'location': "Render Layers Panel",
     'description': 'Copy, Paste or Duplicate Render Layer',
     'category': 'Render',
@@ -186,12 +186,10 @@ def buttons(self, context):
 def register():
     bpy.utils.register_module(__name__)
     bpy.types.RENDERLAYER_PT_layers.prepend(buttons)
-    bpy.types.CyclesRender_PT_layers.prepend(buttons)
 
 def unregister():
     bpy.utils.unregister_module(__name__)
     bpy.types.RENDERLAYER_PT_layers.remove(buttons)
-    bpy.types.CyclesRender_PT_layers.remove(buttons)
 
 if __name__ == "__main__":
     register()
